@@ -9,15 +9,14 @@ import UIKit
 
 class BountyListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let arrayName = ["Brook", "Chopper", "Franky", "Luffy", "Nami", "Robin", "Sanji", "Zoro"]
-    let arrayBounty = [33000000, 50, 44000000, 300000000, 16000000, 80000000, 77000000, 120000000]
+    let viewModel = BountyListViewModel()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail"{
             let detailViewController = segue.destination as? DetailViewController
             if let indexPath = sender as? Int{
-                detailViewController?.name = arrayName[indexPath]
-                detailViewController?.bounty = arrayBounty[indexPath]
+                let bountyInfo = viewModel.bountyInfo(at: indexPath)
+                detailViewController?.viewModel.update(model: bountyInfo)
             }
         }
     }
@@ -27,7 +26,7 @@ class BountyListViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayName.count
+        return viewModel.numOfBountyInfoList
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,10 +35,9 @@ class BountyListViewController: UIViewController, UITableViewDataSource, UITable
 //            return
         }
         
-        let img = UIImage(named: "\(arrayName[indexPath.row]).jpg")
-        cell.imgViewBounty.image = img
-        cell.lblName.text = arrayName[indexPath.row]
-        cell.lblBounty.text = "$\(arrayBounty[indexPath.row])"
+        let bountyInfo = viewModel.bountyInfo(at: indexPath.row)
+        
+        cell.update(info: bountyInfo)
         return cell
     }
     
@@ -52,4 +50,39 @@ class CellBounty: UITableViewCell{
     @IBOutlet weak var imgViewBounty: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblBounty: UILabel!
+    
+    func update(info: BountyInfo){
+        imgViewBounty.image = info.image
+        lblName.text = info.name
+        lblBounty.text = "$\(info.bounty)"
+    }
+}
+
+class BountyListViewModel{
+    let bountyInfoList: [BountyInfo] = [
+        BountyInfo(name: "Brook", bounty: 33000000),
+        BountyInfo(name: "Chopper", bounty: 50),
+        BountyInfo(name: "Franky", bounty: 44000000),
+        BountyInfo(name: "Luffy", bounty: 300000000),
+        BountyInfo(name: "Nami", bounty: 16000000),
+        BountyInfo(name: "Robin", bounty: 80000000),
+        BountyInfo(name: "Sanji", bounty: 77000000),
+        BountyInfo(name: "Zoro", bounty: 120000000)
+    ]
+    
+    var sortedBountyInfoList : [BountyInfo]{
+        let sortedBountyInfoList = bountyInfoList.sorted(by: {
+            $0.bounty > $1.bounty
+        })
+        return sortedBountyInfoList
+    }
+    
+    var numOfBountyInfoList: Int{
+        return bountyInfoList.count
+    }
+    
+    func bountyInfo(at index: Int) -> BountyInfo{
+        return sortedBountyInfoList[index]
+    }
+    
 }

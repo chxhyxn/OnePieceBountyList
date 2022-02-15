@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D143053A27BC4C7500464B42 /* BountyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D143053927BC4C7500464B42 /* BountyInfo.swift */; };
 		D16934CF27BA727F0072E45F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16934CE27BA727F0072E45F /* AppDelegate.swift */; };
 		D16934D127BA727F0072E45F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16934D027BA727F0072E45F /* SceneDelegate.swift */; };
 		D16934D627BA727F0072E45F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16934D427BA727F0072E45F /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D143053927BC4C7500464B42 /* BountyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyInfo.swift; sourceTree = "<group>"; };
 		D16934CB27BA727F0072E45F /* BountyList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BountyList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16934CE27BA727F0072E45F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16934D027BA727F0072E45F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				D16934D927BA72800072E45F /* LaunchScreen.storyboard */,
 				D16934DC27BA72800072E45F /* Info.plist */,
 				D16934E627BA996C0072E45F /* DetailViewController.swift */,
+				D143053927BC4C7500464B42 /* BountyInfo.swift */,
 			);
 			path = BountyList;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D143053A27BC4C7500464B42 /* BountyInfo.swift in Sources */,
 				D16934E527BA759A0072E45F /* BountyListViewController.swift in Sources */,
 				D16934CF27BA727F0072E45F /* AppDelegate.swift in Sources */,
 				D16934D127BA727F0072E45F /* SceneDelegate.swift in Sources */,

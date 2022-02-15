@@ -9,29 +9,35 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    let viewModel = DetailViewModel()
+    
     @IBOutlet weak var imgViewBounty: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblBounty: UILabel!
-    
-    var name: String?
-    var bounty: Int?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
     }
     
     func updateUI(){
-        if let name = name, let bounty = bounty {
-            let img = UIImage(named: "\(name).jpg")
-            imgViewBounty.image = img
-            lblName.text = name
-            lblBounty.text = "$\(bounty)"
+        if let bountyInfo = viewModel.bountyInfo {
+            imgViewBounty.image = bountyInfo.image
+            lblName.text = bountyInfo.name
+            lblBounty.text = "$\(bountyInfo.bounty)"
         }
     }
     
     @IBAction func btnClose(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    class DetailViewModel{
+        var bountyInfo: BountyInfo?
+        
+        func update(model: BountyInfo?){
+            bountyInfo = model
+        }
     }
     
 }
