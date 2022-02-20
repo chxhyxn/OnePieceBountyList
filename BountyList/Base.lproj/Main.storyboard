@@ -137,23 +137,27 @@
                         <viewLayoutGuide key="safeArea" id="gQh-T1-QD7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KSC-5R-hwt" firstAttribute="trailing" secondItem="IWD-9q-i9n" secondAttribute="trailing" id="2CV-Ak-Xod"/>
-                            <constraint firstItem="gQh-T1-QD7" firstAttribute="trailing" secondItem="IWD-9q-i9n" secondAttribute="trailing" constant="16" id="99S-F6-OVX"/>
+                            <constraint firstItem="IWD-9q-i9n" firstAttribute="centerX" secondItem="gQh-T1-QD7" secondAttribute="centerX" id="4FC-gD-8KQ"/>
                             <constraint firstItem="KSC-5R-hwt" firstAttribute="top" secondItem="IWD-9q-i9n" secondAttribute="bottom" constant="22.666666666666742" id="9Rs-6A-Wtd"/>
                             <constraint firstItem="icU-A4-owm" firstAttribute="trailing" secondItem="KSC-5R-hwt" secondAttribute="trailing" id="Osx-Dt-eNb"/>
                             <constraint firstItem="icU-A4-owm" firstAttribute="leading" secondItem="KSC-5R-hwt" secondAttribute="leading" id="P0I-MI-ylG"/>
                             <constraint firstItem="gQh-T1-QD7" firstAttribute="trailing" secondItem="SLt-S6-jD9" secondAttribute="trailing" constant="16" id="b4l-jX-SUk"/>
                             <constraint firstItem="IWD-9q-i9n" firstAttribute="top" secondItem="gQh-T1-QD7" secondAttribute="top" constant="78" id="bmI-O1-ZCr"/>
-                            <constraint firstItem="KSC-5R-hwt" firstAttribute="leading" secondItem="IWD-9q-i9n" secondAttribute="leading" id="h8H-nu-5FU"/>
+                            <constraint firstItem="IWD-9q-i9n" firstAttribute="leading" secondItem="gQh-T1-QD7" secondAttribute="leading" constant="16" id="gPs-mv-Pt0"/>
+                            <constraint firstItem="KSC-5R-hwt" firstAttribute="centerX" secondItem="gQh-T1-QD7" secondAttribute="centerX" id="sxC-Pk-XRh"/>
+                            <constraint firstItem="gQh-T1-QD7" firstAttribute="trailing" secondItem="IWD-9q-i9n" secondAttribute="trailing" constant="16" id="toU-7E-Uxj"/>
+                            <constraint firstItem="icU-A4-owm" firstAttribute="centerX" secondItem="gQh-T1-QD7" secondAttribute="centerX" id="uyk-iG-6E7"/>
                             <constraint firstItem="icU-A4-owm" firstAttribute="top" secondItem="KSC-5R-hwt" secondAttribute="bottom" constant="8" symbolic="YES" id="y43-Fx-a9G"/>
                             <constraint firstItem="SLt-S6-jD9" firstAttribute="top" secondItem="gQh-T1-QD7" secondAttribute="top" constant="20" id="yKj-9U-Cd9"/>
-                            <constraint firstItem="IWD-9q-i9n" firstAttribute="leading" secondItem="gQh-T1-QD7" secondAttribute="leading" constant="16" id="yki-Ln-nvA"/>
+                            <constraint firstItem="KSC-5R-hwt" firstAttribute="width" secondItem="IWD-9q-i9n" secondAttribute="width" id="zS3-8e-PgH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imgViewBounty" destination="IWD-9q-i9n" id="44a-DZ-ElB"/>
                         <outlet property="lblBounty" destination="icU-A4-owm" id="NJQ-ZC-Ofc"/>
+                        <outlet property="lblBountyCenterX" destination="uyk-iG-6E7" id="2cM-HJ-6D7"/>
                         <outlet property="lblName" destination="KSC-5R-hwt" id="0Tm-LL-cgr"/>
+                        <outlet property="lblNameCenterX" destination="sxC-Pk-XRh" id="Flh-iZ-7H7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4d-bw-hO2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
